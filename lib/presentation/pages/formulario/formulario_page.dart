@@ -1,6 +1,3 @@
-// lib/presentation/pages/formulario/formulario_page.dart
-// VERSIÓN SIMPLIFICADA - La verificación de red ahora la hace el BLoC
-
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -234,16 +231,11 @@ class _FormularioPageViewState extends State<_FormularioPageView> {
   }
 
   Future<void> _submitForm() async {
-    // SIMPLIFICADO: Ya no verificamos conectividad aquí
-    // El BLoC se encarga de verificar REAL acceso a Internet
-
-    // Validar formulario
     if (!_formKey.currentState!.validate()) {
       _showError(AppConstants.errorCamposIncompletos);
       return;
     }
 
-    // Validar archivo de audio
     if (_audioFilePath == null || !File(_audioFilePath!).existsSync()) {
       _showError(AppConstants.errorArchivoNoSeleccionado);
       return;
@@ -251,7 +243,6 @@ class _FormularioPageViewState extends State<_FormularioPageView> {
 
     if (!mounted) return;
 
-    // Obtener códigos de la configuración
     final configState = context.read<ConfigBloc>().state;
     if (configState is! ConfigLoaded) {
       _showError('Configuración no cargada');
@@ -272,7 +263,6 @@ class _FormularioPageViewState extends State<_FormularioPageView> {
 
     if (!mounted) return;
 
-    // Enviar formulario - El BLoC verificará la conexión antes de proceder
     context.read<FormularioBloc>().add(
           EnviarFormularioEvent(
             fechaNacimiento: _selectedDate!,
@@ -332,7 +322,7 @@ class _FormularioPageViewState extends State<_FormularioPageView> {
         ),
         backgroundColor: MedicalColors.errorRed,
         behavior: SnackBarBehavior.floating,
-        duration: const Duration(seconds: 5), // Más tiempo para mensajes largos
+        duration: const Duration(seconds: 5),
       ),
     );
   }

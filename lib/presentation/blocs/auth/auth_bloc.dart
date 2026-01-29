@@ -79,6 +79,18 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     _authStateSubscription = authRepository.authStateChanges.listen(
       (user) => add(AuthUserChanged(user)),
     );
+
+    // Verificar estado inicial del usuario
+    _checkInitialAuthState();
+  }
+
+  /// Verifica el estado de autenticación inicial
+  Future<void> _checkInitialAuthState() async {
+    final result = await getCurrentUserUseCase();
+    result.fold(
+      (failure) => add(const AuthUserChanged(UserEntity.empty)),
+      (user) => add(AuthUserChanged(user)),
+    );
   }
 
   void _onUserChanged(AuthUserChanged event, Emitter<AuthState> emit) {

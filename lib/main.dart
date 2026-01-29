@@ -11,7 +11,7 @@ import 'amplifyconfiguration.dart';
 import 'injection_container.dart' as di;
 import 'presentation/theme/app_theme.dart';
 import 'presentation/pages/auth/login_page.dart';
-import 'presentation/pages/formulario/formulario_page.dart';
+import 'presentation/pages/dashboard/main_dashboard.dart';
 import 'presentation/blocs/auth/auth_bloc.dart';
 import 'presentation/blocs/config/config_bloc.dart';
 import 'presentation/blocs/config/config_event.dart';
@@ -80,7 +80,6 @@ class MyApp extends StatelessWidget {
 }
 
 /// Widget que maneja la navegación basada en el estado de autenticación
-/// MODIFICADO: Ahora SIEMPRE requiere autenticación
 class AuthNavigator extends StatelessWidget {
   const AuthNavigator({super.key});
 
@@ -93,13 +92,12 @@ class AuthNavigator extends StatelessWidget {
           return const SplashScreen();
         }
 
-        // Solo mostrar formulario si está autenticado
+        // Si está autenticado, mostrar dashboard
         if (state is AuthAuthenticated) {
-          return const FormularioPage();
+          return const MainDashboard();
         }
 
-        // Si no está autenticado, SIEMPRE mostrar login
-        // Esto incluye el estado AuthUnauthenticated y cualquier otro caso
+        // Si no está autenticado, mostrar login
         return const LoginPage();
       },
     );

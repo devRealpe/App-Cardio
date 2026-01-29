@@ -80,6 +80,7 @@ class MyApp extends StatelessWidget {
 }
 
 /// Widget que maneja la navegación basada en el estado de autenticación
+/// MODIFICADO: Ahora SIEMPRE requiere autenticación
 class AuthNavigator extends StatelessWidget {
   const AuthNavigator({super.key});
 
@@ -92,12 +93,13 @@ class AuthNavigator extends StatelessWidget {
           return const SplashScreen();
         }
 
-        // Si está autenticado, mostrar formulario
+        // Solo mostrar formulario si está autenticado
         if (state is AuthAuthenticated) {
           return const FormularioPage();
         }
 
-        // Si no está autenticado, mostrar login
+        // Si no está autenticado, SIEMPRE mostrar login
+        // Esto incluye el estado AuthUnauthenticated y cualquier otro caso
         return const LoginPage();
       },
     );
@@ -111,39 +113,83 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: Theme.of(context)
-                    .primaryColor
-                    .withAlpha((0.1 * 255).toInt()),
-                shape: BoxShape.circle,
-              ),
-              child: Icon(
-                Icons.favorite,
-                size: 80,
-                color: Theme.of(context).primaryColor,
-              ),
+            // Logo animado
+            TweenAnimationBuilder(
+              tween: Tween<double>(begin: 0.8, end: 1.0),
+              duration: const Duration(milliseconds: 1500),
+              curve: Curves.easeInOut,
+              builder: (context, double value, child) {
+                return Transform.scale(
+                  scale: value,
+                  child: Container(
+                    padding: const EdgeInsets.all(24),
+                    decoration: BoxDecoration(
+                      color: Theme.of(context)
+                          .primaryColor
+                          .withAlpha((0.1 * 255).toInt()),
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Theme.of(context)
+                              .primaryColor
+                              .withAlpha((0.3 * 255).toInt()),
+                          blurRadius: 20 * value,
+                          spreadRadius: 2 * value,
+                        ),
+                      ],
+                    ),
+                    child: Icon(
+                      Icons.favorite,
+                      size: 80,
+                      color: Theme.of(context).primaryColor,
+                    ),
+                  ),
+                );
+              },
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 32),
             const Text(
               'ASCS',
               style: TextStyle(
-                fontSize: 32,
+                fontSize: 36,
                 fontWeight: FontWeight.bold,
+                letterSpacing: 2,
               ),
             ),
             const SizedBox(height: 8),
-            const Text(
+            Text(
               'Etiquetado Cardíaco',
-              style: TextStyle(fontSize: 16),
+              style: TextStyle(
+                fontSize: 18,
+                color: Colors.grey[600],
+                letterSpacing: 0.5,
+              ),
             ),
             const SizedBox(height: 48),
-            const CircularProgressIndicator(),
+            // Indicador de carga
+            SizedBox(
+              width: 40,
+              height: 40,
+              child: CircularProgressIndicator(
+                strokeWidth: 3,
+                valueColor: AlwaysStoppedAnimation<Color>(
+                  Theme.of(context).primaryColor,
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
+            Text(
+              'Verificando sesión...',
+              style: TextStyle(
+                fontSize: 14,
+                color: Colors.grey[500],
+              ),
+            ),
           ],
         ),
       ),

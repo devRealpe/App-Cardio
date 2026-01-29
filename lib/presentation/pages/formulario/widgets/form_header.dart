@@ -1,6 +1,7 @@
-// lib/presentation/pages/formulario/widgets/form_header.dart
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../theme/medical_colors.dart';
+import '../../../blocs/auth/auth_bloc.dart';
 
 class FormHeader extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback onInfoPressed;
@@ -41,6 +42,7 @@ class FormHeader extends StatelessWidget implements PreferredSizeWidget {
             children: [
               Row(
                 children: [
+                  // Logo
                   Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
@@ -58,6 +60,8 @@ class FormHeader extends StatelessWidget implements PreferredSizeWidget {
                     ),
                   ),
                   const SizedBox(width: 16),
+
+                  // Título
                   const Expanded(
                     child: Text(
                       'Etiquetado Cardíaco',
@@ -69,6 +73,8 @@ class FormHeader extends StatelessWidget implements PreferredSizeWidget {
                       ),
                     ),
                   ),
+
+                  // Botón de información
                   Container(
                     decoration: BoxDecoration(
                       color: Colors.white.withAlpha((0.15 * 255).toInt()),
@@ -84,11 +90,77 @@ class FormHeader extends StatelessWidget implements PreferredSizeWidget {
                       tooltip: 'Información',
                     ),
                   ),
+
+                  const SizedBox(width: 8),
+
+                  // Botón de cerrar sesión
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white.withAlpha((0.15 * 255).toInt()),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: IconButton(
+                      icon: const Icon(
+                        Icons.logout,
+                        color: Colors.white,
+                        size: 24,
+                      ),
+                      onPressed: () => _showLogoutConfirmation(context),
+                      tooltip: 'Cerrar sesión',
+                    ),
+                  ),
                 ],
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  /// Muestra un diálogo de confirmación antes de cerrar sesión
+  void _showLogoutConfirmation(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        title: Row(
+          children: [
+            Icon(
+              Icons.logout,
+              color: MedicalColors.warningOrange,
+              size: 28,
+            ),
+            const SizedBox(width: 12),
+            const Text('Cerrar sesión'),
+          ],
+        ),
+        content: const Text(
+          '¿Estás seguro de que deseas cerrar sesión?\n\n'
+          'Deberás iniciar sesión nuevamente para usar la aplicación.',
+          style: TextStyle(fontSize: 15),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(dialogContext),
+            child: const Text('Cancelar'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              // Cerrar el diálogo
+              Navigator.pop(dialogContext);
+
+              // Despachar evento de cerrar sesión
+              context.read<AuthBloc>().add(AuthSignOutRequested());
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: MedicalColors.errorRed,
+            ),
+            child: const Text('Cerrar sesión'),
+          ),
+        ],
       ),
     );
   }

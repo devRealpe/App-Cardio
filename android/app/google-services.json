@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "510921772778",
+    "project_id": "app-cardio-89e38",
+    "storage_bucket": "app-cardio-89e38.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:510921772778:android:8bf76698fd6122775a1193",
+        "android_client_info": {
+          "package_name": "com.example.app_ascs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrw5P8_VW3W6_EicVcJmBug9EaToH7B2U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -22,15 +22,18 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.app_cardio"
+
+        // en google-services.json
+        applicationId = "com.example.app_ascs"
         minSdk = 24 
         targetSdk = 34
         versionCode = flutter.versionCode
         versionName = flutter.versionName
 
-        // Configuración para OAuth de Google
+        // Usa el Web Client ID del google-services.json
+        // Formato: com.googleusercontent.apps.[WEB_CLIENT_ID_PREFIX]
         manifestPlaceholders += [
-            'appAuthRedirectScheme': 'com.googleusercontent.apps.385400839963'
+            'appAuthRedirectScheme': 'com.googleusercontent.apps.764495160503-c08scuv6gkqdb6h1h76hvo44l2jr3ktp'
         ]
     }
 

@@ -48,42 +48,6 @@
           ]
         }
       }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:764495160503:android:4199bd2214db739a975932",
-        "android_client_info": {
-          "package_name": "com.example.app_cardio"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "764495160503-c08scuv6gkqdb6h1h76hvo44l2jr3ktp.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyD4V_g9BVF-vBj2MB9meYkbFS88jbibdd8"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "764495160503-c08scuv6gkqdb6h1h76hvo44l2jr3ktp.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "764495160503-55qbm5mp4tegog0ijj84u7je71o4pfmj.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.appAscs"
-              }
-            }
-          ]
-        }
-      }
     }
   ],
   "configuration_version": "1"

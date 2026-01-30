@@ -41,29 +41,30 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCfl210CZGA6Spc7WbtRC_qjlrrDp3MavY',
-    appId: '1:510921772778:web:2c9276b3120350aa5a1193',
-    messagingSenderId: '510921772778',
-    projectId: 'app-cardio-89e38',
-    authDomain: 'app-cardio-89e38.firebaseapp.com',
-    storageBucket: 'app-cardio-89e38.firebasestorage.app',
-    measurementId: 'G-C86WRJYR4Y',
+    apiKey: 'AIzaSyAvaeYmS9gTf4cvmsNhbX3Gic4DqnYp4zA',
+    appId: '1:764495160503:web:2c2312a71889aee9975932',
+    messagingSenderId: '764495160503',
+    projectId: 'app-cardio-6dd34',
+    authDomain: 'app-cardio-6dd34.firebaseapp.com',
+    storageBucket: 'app-cardio-6dd34.firebasestorage.app',
+    measurementId: 'G-M178ENZMMP',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDrw5P8_VW3W6_EicVcJmBug9EaToH7B2U',
-    appId: '1:510921772778:android:8bf76698fd6122775a1193',
-    messagingSenderId: '510921772778',
-    projectId: 'app-cardio-89e38',
-    storageBucket: 'app-cardio-89e38.firebasestorage.app',
+    apiKey: 'AIzaSyD4V_g9BVF-vBj2MB9meYkbFS88jbibdd8',
+    appId: '1:764495160503:android:4199bd2214db739a975932',
+    messagingSenderId: '764495160503',
+    projectId: 'app-cardio-6dd34',
+    storageBucket: 'app-cardio-6dd34.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDWvcCA45K7uoTtKD81Y483LReeQxtMukk',
-    appId: '1:510921772778:ios:0e50682ed8ac08ad5a1193',
-    messagingSenderId: '510921772778',
-    projectId: 'app-cardio-89e38',
-    storageBucket: 'app-cardio-89e38.firebasestorage.app',
+    apiKey: 'AIzaSyDcDkNYSvr1hMgJImYmFsMSOGUj0KC3EAA',
+    appId: '1:764495160503:ios:dd9f93e06f6a59a3975932',
+    messagingSenderId: '764495160503',
+    projectId: 'app-cardio-6dd34',
+    storageBucket: 'app-cardio-6dd34.firebasestorage.app',
+    iosClientId: '764495160503-55qbm5mp4tegog0ijj84u7je71o4pfmj.apps.googleusercontent.com',
     iosBundleId: 'com.example.appAscs',
   );
 

@@ -22,7 +22,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.app_ascs"
+        applicationId = "com.example.app_cardio"
         minSdk = 24 
         targetSdk = 34
         versionCode = flutter.versionCode

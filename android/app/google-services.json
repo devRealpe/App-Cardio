@@ -1,37 +1,81 @@
 {
   "project_info": {
-    "project_number": "510921772778",
-    "project_id": "app-cardio-89e38",
-    "storage_bucket": "app-cardio-89e38.firebasestorage.app"
+    "project_number": "764495160503",
+    "project_id": "app-cardio-6dd34",
+    "storage_bucket": "app-cardio-6dd34.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:510921772778:android:8bf76698fd6122775a1193",
+        "mobilesdk_app_id": "1:764495160503:android:ecf71f11944e02b9975932",
         "android_client_info": {
           "package_name": "com.example.app_ascs"
         }
       },
       "oauth_client": [
         {
-          "client_id": "510921772778-8an7ujis12rc950l5e5s33me7qq4oe6h.apps.googleusercontent.com",
+          "client_id": "764495160503-i142u9sj1me61tj51j9bhq17oaiol014.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.app_ascs",
+            "certificate_hash": "a31eaeaf1d902e93db64581f7b305ab0b4a66e04"
+          }
+        },
+        {
+          "client_id": "764495160503-c08scuv6gkqdb6h1h76hvo44l2jr3ktp.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDrw5P8_VW3W6_EicVcJmBug9EaToH7B2U"
+          "current_key": "AIzaSyD4V_g9BVF-vBj2MB9meYkbFS88jbibdd8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "510921772778-8an7ujis12rc950l5e5s33me7qq4oe6h.apps.googleusercontent.com",
+              "client_id": "764495160503-c08scuv6gkqdb6h1h76hvo44l2jr3ktp.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "510921772778-oc6dncpatso1hqdlnq3i7vlj4ijqam1c.apps.googleusercontent.com",
+              "client_id": "764495160503-55qbm5mp4tegog0ijj84u7je71o4pfmj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.appAscs"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764495160503:android:4199bd2214db739a975932",
+        "android_client_info": {
+          "package_name": "com.example.app_cardio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "764495160503-c08scuv6gkqdb6h1h76hvo44l2jr3ktp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4V_g9BVF-vBj2MB9meYkbFS88jbibdd8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "764495160503-c08scuv6gkqdb6h1h76hvo44l2jr3ktp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "764495160503-55qbm5mp4tegog0ijj84u7je71o4pfmj.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.example.appAscs"
